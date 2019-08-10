@@ -39,7 +39,7 @@ function buttonComment(){
       texto: document.getElementById('textareaComment').value
   };
    
-  comments.push(newComment);
+  comments.unshift(newComment);
   clearandshow()
   localStorage.setItem('saveComment', JSON.stringify(comments));
 }
