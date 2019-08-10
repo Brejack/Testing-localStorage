@@ -55,3 +55,12 @@ function loginUser(){
 			alert("Datas dont match, try again");
 		}
 }
+
+function showDisplay(){
+
+}
+
+
+showDisplay(){
+	
+}

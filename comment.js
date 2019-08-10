@@ -28,7 +28,7 @@ function showComments(elemento, i){
     <p>${elemento.texto}</p>
     <div class=" row justify-content-end ">
         <div><i class="far fa-arrow-alt-circle-up"></i></div>
-        <div onclick="likeDislike(${})"><i class="far fa-thumbs-up ml-2"></i></div>
+        <div onclick=""><i class="far fa-thumbs-up ml-2"></i></div>
         <div> <i class="far fa-thumbs-down mr-2"></i></div>
     </div>
 </div>`
