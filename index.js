@@ -77,14 +77,13 @@ function loginUser(){
 							element.logged = true;
 							alert("Succes");
 							flag=false;
-							document.getElementById("mkComent").className = "my-5";
-							document.getElementById("buttonLogin").className = "d-none";
-							document.getElementById("buttonLogoout").className = "d-block btn btn-primary";
+							userLogIn(element)
 							userLogged.User = element.User; 
 							userLogged.logged = true;
 
-							
-							
+							localStorage.setItem('userData',JSON.stringify(userData));
+							userData = JSON.parse(localStorage.getItem('userData')) || [];
+
 							return;
 						}
 
@@ -106,9 +105,9 @@ function logout(){
 			userLogged.User= "observer";
 			element.logged= false;
 			userLogged.logged = false;
-			document.getElementById("mkComent").className = "d-node";
-			document.getElementById("buttonLogin").className = "";
-			document.getElementById("buttonLogoout").className = "d-none";
+			localStorage.setItem('userData',JSON.stringify(userData));
+			userData = JSON.parse(localStorage.getItem('userData')) || [];
+			userLogOut();
 
 			return;
 
@@ -124,6 +123,13 @@ let commentSection = document.getElementById('commentSection');
 
 
 function clearandshow(){
+	userData.forEach(function(element,i){
+		if(element.logged){
+			userLogIn(element)
+			
+							
+		}
+	})
     commentSection.innerHTML ='';
     comments.forEach(showComments);
     document.getElementById('textareaComment').value = '';
@@ -168,11 +174,30 @@ function buttonComment(){
 function deletComment(elemetn){
     comments.splice(elemetn, 1);
     localStorage.setItem('saveComment', JSON.stringify(comments));
-    clearandshow()
+    clearandshow();
   
 }
 function likeDislike(elemet){
     
+}
+
+function userLogIn(element){
+	document.getElementById("profile").className = "mx-5";
+
+	document.getElementById("profile").innerHTML ="Bienvenido: "+ element.User;
+	document.getElementById("mkComent").className = "my-5";
+	document.getElementById("buttonLogin").className = "d-none";
+	document.getElementById("buttonLogoout").className = "d-block btn btn-primary";
+
+}
+
+function userLogOut(){
+	document.getElementById("profile").className = "d-none";
+	document.getElementById("profile").innerHTML ="";
+	document.getElementById("mkComent").className = "d-node";
+	document.getElementById("buttonLogin").className = "";
+	document.getElementById("buttonLogoout").className = "d-none";
+
 }
 
 clearandshow();

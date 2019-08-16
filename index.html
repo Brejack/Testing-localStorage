@@ -12,33 +12,36 @@
     <title>Hello, world!</title>
   </head>
   <body>
-      <ul class="nav d-flex justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <!-- Button trigger modal -->
-          <div class="" id="buttonLogin">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLogIn">
-               Log in
+      <div class="d-flex justify-content-between">
+        <div class="d-none" id="profile">asd
+        </div>
+        <ul class="nav d-flex justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <!-- Button trigger modal -->
+            <div class="" id="buttonLogin">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLogIn">
+                 Log in
+              </button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalRegister">
+                 Register
+              </button>
+            </div>
+            <button type="button" class="btn btn-primary d-none" id="buttonLogoout" onclick="logout()">
+               Log out
             </button>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalRegister">
-               Register
-            </button>
-          </div>
-          <button type="button" class="btn btn-primary d-none" id="buttonLogoout" onclick="logout()">
-             Log out
-          </button>
 
-        </li>
-      </ul>
-
+          </li>
+        </ul>
+      </div>
       <main class="bg-danger container">
         <h2>Main</h2>
           <section class="d-none" id="mkComent">
